@@ -10,10 +10,10 @@ ModelImporter:
       name: defaultMat
     second: {fileID: 2100000, guid: 24cdc0503d230334e86e87ebea59096e, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
