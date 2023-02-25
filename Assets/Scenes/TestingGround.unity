@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -257,14 +257,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141677292}
-  m_LocalRotation: {x: 0.3125875, y: 0.02105972, z: -0.0069436994, w: 0.9496301}
-  m_LocalPosition: {x: -0.5104738, y: 2.3587294, z: -2.2493904}
+  m_LocalRotation: {x: 0.058861874, y: 0.01742218, z: -0.0010274404, w: 0.99811363}
+  m_LocalPosition: {x: -0.78, y: 1.292, z: -2.605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2231112423937168875}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 6.75, y: 2, z: 0}
 --- !u!114 &141677296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5418ae1f01a24c279e4648ec93da67d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 1000
+  mouseSensitivity: 500
   playerBody: {fileID: 2231112423937168875}
 --- !u!1 &242468156
 GameObject:
@@ -303,13 +303,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242468156}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.0000000074505797, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2231112423937168875}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &242468158
 SphereCollider:
@@ -623,7 +623,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673339540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.16, z: 0}
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -824,13 +824,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6935736475793376976}
-  m_LocalRotation: {x: -0, y: 0.46178558, z: 0.000000014901163, w: 0.8869916}
-  m_LocalPosition: {x: 0.012242317, y: -0.24381423, z: -0.81236553}
+  m_LocalRotation: {x: -0, y: 0.46178555, z: 0.000000012572853, w: 0.88699156}
+  m_LocalPosition: {x: -0.124, y: -0.24, z: -0.908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 141677295}
   - {fileID: 242468157}
+  - {fileID: 141677295}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 55.005, z: 0}
@@ -883,8 +883,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 6935736475793376978}
-  speed: 12
-  gravity: -9.18
+  speed: 15
+  gravity: -5
   groundCheck: {fileID: 242468157}
   groundDistance: 0.5
   groundMask:
