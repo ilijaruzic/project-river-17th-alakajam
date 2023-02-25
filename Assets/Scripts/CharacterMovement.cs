@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed = 20f;
-    [SerializeField] private float movementSpeed = 50f;
+    [SerializeField] private float rotationSpeed = 50f;
+    [SerializeField] private float movementSpeed = 10f;
     [SerializeField] private float force = 5f;
 
     private bool isGrounded;
