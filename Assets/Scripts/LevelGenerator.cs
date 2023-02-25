@@ -48,6 +48,7 @@ public class LevelGenerator : MonoBehaviour
 
     [SerializeField] private GameObject[] Trees;
     [SerializeField] private GameObject[] Bushes;
+    [SerializeField] private GameObject[] Stones;
     [SerializeField] private Transform Parent;
 
     private float width = 3.2f;
@@ -57,7 +58,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] float startPosX;
     [SerializeField] float startPosY;
 
-    void Awake()
+    void Start()
     {
 
         //GrassTiles 
@@ -76,22 +77,26 @@ public class LevelGenerator : MonoBehaviour
                 GameObject toClone = null;
                 switch (sym)
                 {
-                    case 'G':
-                    case 'D':
-                        int randVal = Mathf.RoundToInt(Random.Range(0, 4));
-                        toClone = Bushes[randVal];
-                        break;
+                    //case 'G':
+                    //case 'D':
+                     //   int randVal = Mathf.RoundToInt(Random.Range(0, 4));
+                    //    toClone = Bushes[randVal];
+                    //    break;
                     case 'S':
                         //toClone = SandTile;
                         break;
                     case 'W':
-                        //toClone = WaterTile;
+                        //int randVal = Mathf.RoundToInt(Random.Range(0, 10));
+                        //if (randVal <= 2)
+                        //{
+                        //    toClone = Stones[randVal];
+                        //}
                         break;
                 }
 
                 Vector3 clonePos = new Vector3(
                     Random.Range(startPosX + width * (i - 1), startPosX + width * i),
-                    4.2f, //(sym == 'S') ? 2.6f : 1,
+                    2, //4.2f, //(sym == 'S') ? 2.6f : 1,
                     Random.Range(startPosY + height * (j - 1), startPosY + height * j)
                 );
                 Quaternion cloneRot = Quaternion.identity;
