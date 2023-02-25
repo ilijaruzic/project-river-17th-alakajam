@@ -1,51 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed = 50f;
-    [SerializeField] private float movementSpeed = 10f;
-    [SerializeField] private float force = 5f;
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private float speed = 12f;
+    [SerializeField] private float gravity = -9.18f;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundDistance = 0.4f;
+    [SerializeField] private LayerMask groundMask;
 
-    private bool isGrounded;
-
-    void Start()
-    {
-        isGrounded = true;
-    }
+    Vector3 velocity;
+    bool isGrounded;
 
     void Update()
     {
-        
-        if (Input.GetKey(KeyCode.A))
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        if (isGrounded && velocity.y < 0)
         {
-            transform.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * rotationSpeed);
+            velocity.y = -20f;
         }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * rotationSpeed);
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(Vector3.back * Time.deltaTime * 0.5f * movementSpeed);
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Impulse);
-            isGrounded = false;
-        }
-    }
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
+        Vector3 move = transform.right * x + transform.forward * y;
+        controller.Move(speed * Time.deltaTime * move);
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Space)){
+            if(velocity.y + 20f < 25)
+                velocity.y += 20;
         }
     }
 
