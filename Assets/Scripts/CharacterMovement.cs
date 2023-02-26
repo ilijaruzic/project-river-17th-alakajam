@@ -29,11 +29,6 @@ public class CharacterMovement : MonoBehaviour
         controller.Move(speed * Time.deltaTime * move);
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.Space)){
-            if(velocity.y + 20f < 25)
-                velocity.y += 20;
-        }
     }
 
 }
