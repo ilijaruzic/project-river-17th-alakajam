@@ -14,6 +14,6 @@ public class RotateCoin : MonoBehaviour
     void Update()
     {
         BoxCollider collider = GetComponent<BoxCollider>();
-        transform.RotateAround(collider.bounds.center, Vector3.up, Time.deltaTime * 20f);
+        transform.RotateAround(collider.bounds.center, Vector3.up, Time.deltaTime * 50f);
     }
 }
