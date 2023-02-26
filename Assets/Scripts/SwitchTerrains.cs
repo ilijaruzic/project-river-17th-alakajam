@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SwitchTerrains : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class SwitchTerrains : MonoBehaviour
 
     [SerializeField] AudioSource splashSFX;
     [SerializeField] AudioSource landSFX;
+
+    [SerializeField] TMP_Text RiverEnterText;
 
     public bool isSailing;
     private bool isInArea;
@@ -42,15 +45,9 @@ public class SwitchTerrains : MonoBehaviour
                         collider.enabled = false;
                     }
                 }
-                /*
-                 * 
-                 *  public GameObject yourGameObject; //assign your gameobject from the inspector here
- MeshFilter yourMesh;
- 
- yourMesh = yourGameObject.GetComponent<MeshFilter>();
- yourMesh.sharedMesh = Resources.Load<Mesh>("your mesh name here");
-                 * 
-                 */
+                
+                GetComponent<MeshFilter>().sharedMesh = groundMesh;
+                
                 landSFX.Play();
                 //transform.position = groundPoint;
                 isSailing = false;
@@ -68,6 +65,9 @@ public class SwitchTerrains : MonoBehaviour
                         collider.enabled = false;
                     }
                 }
+
+                GetComponent<MeshFilter>().sharedMesh = riverMesh;
+
                 splashSFX.Play();
                 //transform.position = riverPoint;
                 isSailing = true;
@@ -80,6 +80,7 @@ public class SwitchTerrains : MonoBehaviour
         if (other.name == "SetSail" || other.name == "SetGround")
         {
             isInArea = true;
+            RiverEnterText.gameObject.SetActive(true);
         }
     }
 
@@ -88,6 +89,7 @@ public class SwitchTerrains : MonoBehaviour
         if (other.name == "SetSail" || other.name == "SetGround")
         {
             isInArea = false;
+            RiverEnterText.gameObject.SetActive(false);
         }
     }
 }
