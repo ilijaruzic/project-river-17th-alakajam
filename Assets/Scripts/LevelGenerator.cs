@@ -56,9 +56,9 @@ public class LevelGenerator : MonoBehaviour
 
     // Grid is [x,y]
     [SerializeField] float startPosX;
-    [SerializeField] float startPosY;
+    [SerializeField] float startPosY; 
 
-    void Start()
+    void Awake()
     {
 
         //GrassTiles 
@@ -77,11 +77,11 @@ public class LevelGenerator : MonoBehaviour
                 GameObject toClone = null;
                 switch (sym)
                 {
-                    //case 'G':
-                    //case 'D':
-                     //   int randVal = Mathf.RoundToInt(Random.Range(0, 4));
-                    //    toClone = Bushes[randVal];
-                    //    break;
+                    case 'G':
+                    case 'D':
+                        //int randVal = Mathf.RoundToInt(Random.Range(0, 4));
+                        //toClone = Bushes[randVal];
+                        break;
                     case 'S':
                         //toClone = SandTile;
                         break;
