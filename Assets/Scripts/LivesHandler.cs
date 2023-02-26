@@ -8,8 +8,7 @@ public class LivesHandler : MonoBehaviour
 {
     [SerializeField] TMP_Text HeartText;
     private int livesCount;
-    //[SerializeField] AudioSource rockThrowSFX;
-    //[SerializeField] AudioSource rockCollectSFX;
+    [SerializeField] AudioSource liveLostSFX;
 
     void Start()
     {
@@ -21,6 +20,7 @@ public class LivesHandler : MonoBehaviour
     {
         if (livesCount > 0)
         {
+            liveLostSFX.Play();
             --livesCount;
             HeartText.text = "X " + livesCount;
         }
