@@ -54,6 +54,21 @@ public class GameSceneManager : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
+    public void HowTo()
+    {
+        SceneManager.LoadScene("HowTo");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void About()
+    {
+        SceneManager.LoadScene("About");
+    }
+
     public void QuitGame()
     {
         PlayClickSound();
