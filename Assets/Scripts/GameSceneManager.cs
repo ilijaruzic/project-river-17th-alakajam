@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
@@ -18,9 +19,18 @@ public class GameSceneManager : MonoBehaviour
     public void StartGame()
     {
         PlayClickSound();
-        // Ovo bi trebalo da radi :((
-        //SceneManager.LoadScene(currentLevel);
+        currentLevel = "Level1";
+        CurrentLevel();
+    }
 
+    public void Level(string level)
+    {
+        SceneManager.LoadScene(level);
+    }
+
+    public void CurrentLevel()
+    {
+        SceneManager.LoadScene(currentLevel);
     }
 
     public void MuteToggle()
@@ -31,7 +41,7 @@ public class GameSceneManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        // Isot SceneManager.LoadScene(currentLevel)
+        CurrentLevel();
     }
 
     public void QuitGame()
