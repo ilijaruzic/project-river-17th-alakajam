@@ -11,6 +11,8 @@ TagManager:
   - IsGrounded
   - GroundColliders
   - RiverColliders
+  - Croc
+  - Stone
   layers:
   - Default
   - TransparentFX

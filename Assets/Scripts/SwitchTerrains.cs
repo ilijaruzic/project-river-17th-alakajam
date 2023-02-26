@@ -52,7 +52,7 @@ public class SwitchTerrains : MonoBehaviour
                  * 
                  */
                 landSFX.Play();
-                transform.position = groundPoint;
+                //transform.position = groundPoint;
                 isSailing = false;
             }
             else
@@ -69,7 +69,7 @@ public class SwitchTerrains : MonoBehaviour
                     }
                 }
                 splashSFX.Play();
-                transform.position = riverPoint;
+                //transform.position = riverPoint;
                 isSailing = true;
             }
         }

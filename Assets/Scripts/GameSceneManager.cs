@@ -51,7 +51,7 @@ public class GameSceneManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        CurrentLevel();
+        SceneManager.LoadScene("Level1");
     }
 
     public void QuitGame()
