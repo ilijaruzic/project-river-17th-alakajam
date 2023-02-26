@@ -6,8 +6,8 @@ using UnityEngine;
 public class SlideCroc : MonoBehaviour
 {
     private Vector3 pos;
-    private Vector3 dis = new Vector3(0.5f, 0, 0);
-    [SerializeField] private float speed = 5.0f;
+    private Vector3 dis = new Vector3(0.365f, 0, 0);
+    [SerializeField] private float speed = 2.5f;
 
     // Start is called before the first frame update
     void Start()
